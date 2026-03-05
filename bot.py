@@ -2,16 +2,17 @@ import requests
 import time
 import telegram
 import asyncio
+import os
 from openai import OpenAI
 
 # -----------------------------
 # CONFIGURATION
 # -----------------------------
 
-BOT_TOKEN = "8534858024:AAH0BbyR8jnS66geUaE8HXpcwJTP6-P69o0"
-CHAT_ID = "8796376997"
-CRIC_API_KEY = "d4c0cebd-1ee3-405a-b91b-4a36ece300ce"
-OPENROUTER_API_KEY = "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"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
+CRIC_API_KEY = os.getenv("CRIC_API_KEY")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 # -----------------------------
 # INITIALIZE SERVICES
