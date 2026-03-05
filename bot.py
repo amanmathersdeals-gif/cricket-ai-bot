@@ -64,7 +64,7 @@ def ai_insight(score):
                 {
                     "role": "user",
                     "content": f"""
-                    Analyze this cricket match situation.
+                    line 1 would tell what has happened, line 2 would tell what could happen, focus on main key insigts only.
 
                     Score:
                     {score}
