@@ -8,10 +8,10 @@ from openai import OpenAI
 # CONFIGURATION
 # -----------------------------
 
-BOT_TOKEN = "8534858024:AAH0BbyR8jnS66geUaE8HXpcwJTP6-P69o0"
-CHAT_ID = "8796376997"
-CRIC_API_KEY = "d4c0cebd-1ee3-405a-b91b-4a36ece300ce"
-DEEPSEEK_API_KEY = "sk-aefd1387ceb44364a218037f79a215be"
+BOT_TOKEN = os.getenv("8534858024:AAH0BbyR8jnS66geUaE8HXpcwJTP6-P69o0")
+CHAT_ID = os.getenv("8796376997")
+CRIC_API_KEY = os.getenv("d4c0cebd-1ee3-405a-b91b-4a36ece300ce")
+OPENROUTER_API_KEY = os.getenv("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")
 
 # -----------------------------
 # INITIALIZE SERVICES
@@ -20,8 +20,8 @@ DEEPSEEK_API_KEY = "sk-aefd1387ceb44364a218037f79a215be"
 bot = telegram.Bot(token=BOT_TOKEN)
 
 client = OpenAI(
-    api_key=DEEPSEEK_API_KEY,
-    base_url="https://api.deepseek.com"
+    base_url="https://openrouter.ai/api/v1",
+    api_key=OPENROUTER_API_KEY
 )
 
 last_score = ""
@@ -57,7 +57,7 @@ def ai_insight(score):
     try:
 
         response = client.chat.completions.create(
-            model="deepseek-chat",
+            model="arcee-ai/trinity-large-preview:free",
             messages=[
                 {
                     "role": "user",
@@ -68,20 +68,20 @@ def ai_insight(score):
                     {score}
 
                     Provide short insights:
-
                     - Which team has momentum
                     - Predicted final score
                     - Key tactical insight
                     """
                 }
-            ]
+            ],
+            extra_body={"reasoning": {"enabled": True}}
         )
 
         return response.choices[0].message.content
 
     except Exception as e:
 
-        print("Error generating AI insight:", e)
+        print("AI Error:", e)
 
         return "AI insight unavailable."
 
