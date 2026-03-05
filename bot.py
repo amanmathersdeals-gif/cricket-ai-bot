@@ -90,6 +90,8 @@ def ai_insight(score):
 # TELEGRAM MESSAGE
 # -----------------------------
 
+import asyncio
+
 def send_update(score):
 
     insight = ai_insight(score)
@@ -104,13 +106,13 @@ def send_update(score):
 {insight}
 """
 
-    import asyncio
+    async def send_message_async():
+        await bot.send_message(
+            chat_id=CHAT_ID,
+            text=message
+        )
 
-async def send_message_async(message):
-    await bot.send_message(chat_id=CHAT_ID, text=message)
-
-asyncio.run(send_message_async(message))
-
+    asyncio.run(send_message_async())
 
 
 # -----------------------------
