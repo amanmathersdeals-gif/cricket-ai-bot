@@ -11,7 +11,7 @@ from openai import OpenAI
 BOT_TOKEN = "8534858024:AAH0BbyR8jnS66geUaE8HXpcwJTP6-P69o0"
 CHAT_ID = "8796376997"
 CRIC_API_KEY = "d4c0cebd-1ee3-405a-b91b-4a36ece300ce"
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = "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"
 
 # -----------------------------
 # INITIALIZE SERVICES
@@ -58,7 +58,7 @@ def ai_insight(score):
     try:
 
         response = client.chat.completions.create(
-            model="arcee-ai/trinity-large-preview:free",
+            model="mistralai/mistral-7b-instruct:free",
             messages=[
                 {
                     "role": "user",
