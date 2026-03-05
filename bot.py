@@ -8,10 +8,10 @@ from openai import OpenAI
 # CONFIGURATION
 # -----------------------------
 
-BOT_TOKEN = os.getenv("8534858024:AAH0BbyR8jnS66geUaE8HXpcwJTP6-P69o0")
-CHAT_ID = os.getenv("8796376997")
-CRIC_API_KEY = os.getenv("d4c0cebd-1ee3-405a-b91b-4a36ece300ce")
-OPENROUTER_API_KEY = os.getenv("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")
+BOT_TOKEN = "8534858024:AAH0BbyR8jnS66geUaE8HXpcwJTP6-P69o0"
+CHAT_ID = "8796376997"
+CRIC_API_KEY = "d4c0cebd-1ee3-405a-b91b-4a36ece300ce"
+OPENROUTER_API_KEY = "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"
 
 # -----------------------------
 # INITIALIZE SERVICES
