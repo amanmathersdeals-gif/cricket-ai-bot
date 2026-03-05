@@ -11,7 +11,7 @@ from openai import OpenAI
 BOT_TOKEN = "8534858024:AAH0BbyR8jnS66geUaE8HXpcwJTP6-P69o0"
 CHAT_ID = "8796376997"
 CRIC_API_KEY = "d4c0cebd-1ee3-405a-b91b-4a36ece300ce"
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = "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"
 
 # -----------------------------
 # INITIALIZE SERVICES
