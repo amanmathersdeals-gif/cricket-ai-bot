@@ -28,6 +28,7 @@ last_score = ""
 
 # -----------------------------
 # GET MATCH SCORE
+# Redeploy trigger
 # -----------------------------
 
 def get_score():
