@@ -1,6 +1,7 @@
 import requests
 import time
 import telegram
+import asyncio
 from openai import OpenAI
 
 # -----------------------------
