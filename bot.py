@@ -66,7 +66,7 @@ def get_score():
 def ai_insight(score_text):
     try:
         resp = client.chat.completions.create(
-            model="mistralai/mistral-7b-instruct:free",
+            model="arcee-ai/trinity-large-preview:free",
             messages=[{
                 "role": "user",
                 "content": (
