@@ -103,10 +103,13 @@ def send_update(score):
 {insight}
 """
 
-    bot.send_message(
-        chat_id=CHAT_ID,
-        text=message
-    )
+    import asyncio
+
+async def send_message_async(message):
+    await bot.send_message(chat_id=CHAT_ID, text=message)
+
+asyncio.run(send_message_async(message))
+
 
 
 # -----------------------------
